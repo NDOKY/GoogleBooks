@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Book"
+            type="com.example.googlebooks.Book" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookDetail">
+
+    <ImageView
+        android:id="@+id/imgCover"
+        android:layout_width="179dp"
+        android:layout_height="224dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        android:imageUrl="@{Book.thumbnail}"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"/>
+
+    <TextView
+        android:textSize="36sp"
+        android:id="@+id/tvTitleDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{Book.title}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"/>
+
+    <TextView
+        android:textSize="24sp"
+        android:id="@+id/tvSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{Book.subTitle}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleDetail"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/tvAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{Book.authors}"
+        app:layout_constraintStart_toEndOf="@+id/imgCover"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/tvPublisherDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="@{Book.publisher}"
+        app:layout_constraintStart_toEndOf="@+id/imgCover"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuthor"
+        />
+
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/tvPublishedDateDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="@{Book.publishedDate}"
+        app:layout_constraintStart_toEndOf="@+id/imgCover"
+        app:layout_constraintTop_toBottomOf="@+id/tvPublisherDetail" />
+
+
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/tvDesciption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="@{Book.description}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCover" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+    </layout>
